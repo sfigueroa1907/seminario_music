@@ -1,20 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header>
+
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <swiper-container [initialSlide]="0">
+    <swiper-slide>
+      <h1>Titulo primario</h1>
+      <ion-icon class="slice-icon" name="skull-outline"></ion-icon>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit error ea facere consequatur, nihil in iure
+        eaque? Labore impedit tenetur, exercitationem nemo magni eos quo nam pariatur dolorum provident modi.</p>
+    </swiper-slide>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <swiper-slide>
+      <h1>Titulo secundario</h1>
+      <ion-icon name="barbell-outline"></ion-icon>
+      <img src="assets/Black.png" />
+      <p class="my-favorite-text-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi fugiat dolor, laboriosam assumenda officiis
+        vitae corporis voluptates autem odio nostrum at. Libero expedita amet omnis quo iusto obcaecati ipsum commodi.
+      </p>
+    </swiper-slide>
+  </swiper-container>
 </ion-content>
