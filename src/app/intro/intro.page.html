@@ -1,0 +1,84 @@
+<ion-content>
+  <ion-icon class="close-icon" name="close" (click)="finish()"></ion-icon>
+  <swiper-container [initialSlide]="0">
+    <swiper-slide *ngFor="let slide of slides">
+      <div class="tittleContainer">
+        <h1 class="titleSlice">{{slide.title}}</h1>
+        <ion-icon class="slice-icon" name={{slide.icon}}></ion-icon>
+      </div>
+      <div class="bodySlice">
+        <img src={{slide.img}} width="200px" height="auto" />
+        <p>{{slide.description}}</p>
+      </div>
+    </swiper-slide>
+    <!-- <swiper-slide>
+      <div class="tittleContainer">
+        <h1 class="titleSlice">Ionic</h1>
+        <ion-icon class="slice-icon" name="logo-ionic"></ion-icon>
+      </div>
+      <div class="bodySlice">
+        <img src="assets/images/ionic.png" />
+        <p>Un kit de herramientas de interfaz de usuario móvil de código abierto para crear aplicaciones móviles
+          multiplataforma modernas y de alta calidad a partir de una única base de código</p>
+      </div>
+    </swiper-slide> -->
+    <!-- 
+    <swiper-slide>
+      <div class="tittleContainer">
+        <h1 class="titleSlice">TypeScript</h1>
+        <ion-icon class="slice-icon" name="code"></ion-icon>
+      </div>
+      <div class="bodySlice">
+        <img src="assets/images/ts.png" />
+        <p class="my-favorite-text-color">TypeScript es un lenguaje de programación libre y de código abierto
+          desarrollado
+          y mantenido por Microsoft. Es un superconjunto de JavaScript, que esencialmente añade tipos estáticos y
+          objetos
+          basados en clases.
+        </p>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="tittleContainer">
+        <h1 class="titleSlice">Angular</h1>
+        <ion-icon class="slice-icon" name="code"></ion-icon>
+      </div>
+      <div class="bodySlice">
+        <img src="assets/images/angular.png" />
+        <p class="my-favorite-text-color">Angular es un framework para aplicaciones web desarrollado en TypeScript, de
+          código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola
+          página.
+        </p>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="tittleContainer">
+        <h1 class="titleSlice">Utilice la tecnología de JavaScript que prefiera.</h1>
+      </div>
+      <div class="bodySlice">
+        <img src="assets/images/framework.png" width="250px" height="250px" />
+        <p class="my-favorite-text-color">No hacemos suposiciones sobre los JS Frameworks con los que prefiere
+          construir.
+          Es por eso que diseñamos Ionic para que se integre a la perfección con todos los mejores marcos frontend,
+          incluidos Angular, React, Vue o incluso ningún marco.
+        </p>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="tittleContainer">
+        <h1 class="titleSlice">React</h1>
+        <ion-icon class="slice-icon" name="code"></ion-icon>
+      </div>
+      <div class="bodySlice">
+        <img src="assets/images/react.png" />
+        <p class="my-favorite-text-color">React es una biblioteca Javascript de código abierto diseñada para crear
+          interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página. Es
+          mantenido por Facebook y la comunidad de software libre. En el proyecto hay más de mil desarrolladores libres.
+        </p>
+      </div>
+    </swiper-slide> -->
+  </swiper-container>
+</ion-content>
