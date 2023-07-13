@@ -1,11 +1,11 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Login</ion-title>
+    <ion-title class="ion-text-center ion-text-uppercase">Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form [formGroup]="loginForm">
+<ion-content class="formContainer">
+  <form  [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
     <ion-item>
       <ion-label>Email</ion-label>
       <ion-input formControlName="email" placeholder="name@example.com"></ion-input>
@@ -21,7 +21,10 @@
 
     <ion-item>
       <ion-label>Password</ion-label>
-      <ion-input type="password" formControlName="password" placeholder="you password"></ion-input>
+      <ion-input formControlName="password" placeholder="you password"></ion-input>
     </ion-item>
+    <div class="btnSumit">
+      <ion-button shape="round" color="secondary" [disabled]="!loginForm.valid" type="submit">Ingresar</ion-button>
+    </div>
   </form>
 </ion-content>
