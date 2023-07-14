@@ -1,0 +1,76 @@
+.headerContainer {
+  display: flex;
+  // flex-direction: row;
+  align-items: center;
+  // background-color: cyan;
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: 60px;
+}
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 8px;
+  padding-right: 8px;
+  height: auto;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #e5e5e5;
+  width: 100%;
+  height: 30px;
+}
+
+.slice-icon {
+  font-size: 30px;
+  color: gray;
+}
+
+.containerTapSlide {
+  // font-size: 12px;
+  // color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.labelTapSlide {
+  font-size: 16px;
+  color: gray;
+}
+
+.slideC {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  // background-color: cyan;
+}
+
+.menu-icon {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+.bodyContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+  width: 100%;
+}

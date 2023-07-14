@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content class="formContainer">
-  <form  [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+  <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
     <ion-item>
       <ion-label>Email</ion-label>
       <ion-input formControlName="email" placeholder="name@example.com"></ion-input>
@@ -27,4 +27,9 @@
       <ion-button shape="round" color="secondary" [disabled]="!loginForm.valid" type="submit">Ingresar</ion-button>
     </div>
   </form>
+  <ion-footer>
+    <ion-button expand="full" shape="round" color="success" (click)="goToRegister()">
+      Registrate
+    </ion-button>
+  </ion-footer>
 </ion-content>

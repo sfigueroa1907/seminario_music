@@ -60,4 +60,8 @@ export class LoginPage implements OnInit {
       console.log(this.errorMenssage);
     })
   }
+
+  goToRegister() {
+    this.navCtrl.navigateForward("/register")
+  }
 }
