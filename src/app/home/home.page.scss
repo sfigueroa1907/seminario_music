@@ -8,6 +8,7 @@
   padding-right: 8px;
   height: 60px;
 }
+
 .contentContainer {
   display: flex;
   flex-direction: column;
@@ -59,10 +60,7 @@
   // background-color: cyan;
 }
 
-.menu-icon {
-  margin-right: 10px;
-  font-size: 20px;
-}
+
 
 h1 {
   font-weight: bold;
@@ -74,3 +72,12 @@ h1 {
   background-color: aqua;
   width: 100%;
 }
+
+ion-avatar {
+  height: 50px;
+  width: 50px;
+}
+
+// swiper-slide {
+//   height: 120px;
+// }

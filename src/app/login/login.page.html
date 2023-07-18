@@ -5,10 +5,14 @@
 </ion-header>
 
 <ion-content class="formContainer">
+  <!-- <img src="assets/images/background.jpg" height="100%" width="100%" /> -->
   <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
     <ion-item>
-      <ion-label>Email</ion-label>
-      <ion-input formControlName="email" placeholder="name@example.com"></ion-input>
+      <!-- <ion-label>Email</ion-label> -->
+      <ion-icon name="mail"></ion-icon>
+      <ion-input labelPlacement="floating" formControlName="email" type="email" placeholder="name@example.com">
+        <div slot="label">Email <ion-text color="danger">(Required)</ion-text></div>
+      </ion-input>
     </ion-item>
 
     <div class="validation-errors">
@@ -20,8 +24,11 @@
     </div>
 
     <ion-item>
-      <ion-label>Password</ion-label>
-      <ion-input formControlName="password" placeholder="you password"></ion-input>
+      <!-- <ion-label>Password</ion-label> -->
+      <ion-icon name="key"></ion-icon>
+      <ion-input labelPlacement="floating" formControlName="password" type="password" placeholder="you password">
+        <div slot="label">Contraseña <ion-text color="danger">(Required)</ion-text></div>
+      </ion-input>
     </ion-item>
     <div class="btnSumit">
       <ion-button shape="round" color="secondary" [disabled]="!loginForm.valid" type="submit">Ingresar</ion-button>

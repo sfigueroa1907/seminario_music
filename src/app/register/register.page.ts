@@ -59,6 +59,7 @@ export class RegisterPage implements OnInit {
 
   goToLogin() {
     console.log("Ir atras");
+    this.navCtrl.navigateBack("/login");
   }
   registerUser(userData: any) {
     console.log(userData);
