@@ -86,7 +86,7 @@
       </div>
 
     </div>
-    <swiper-container [initialSlide]="0">
+    <swiper-container [initialSlide]="1">
       <swiper-slide>
         <ion-item button detail="false" lines="none">
           <ion-icon size="large" name="play-circle-outline" color="tertiary"></ion-icon>
@@ -172,7 +172,7 @@
           <ion-card-content>
             <ion-list *ngFor="let artists of artists">
               <ion-item button detail="false" lines="none">
-                <ion-avatar>
+                <ion-avatar (click)="showSongs(artists)">
                   <img src="{{artists.image}}" />
                 </ion-avatar>
                 <ion-label class="ion-margin-start">
@@ -213,8 +213,6 @@
             </ion-list>
           </ion-card-content>
         </ion-card>
-
-
       </swiper-slide>
       <swiper-slide>
         <ion-item button detail="false" lines="none">
@@ -352,6 +350,29 @@
                 <ion-label>
                   <h3>Button Item</h3>
                   <p>Default detail - detail arrow displays on iOS only</p>
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </ion-card-content>
+        </ion-card>
+      </swiper-slide>
+      <swiper-slide>
+        <ion-item button detail="false" lines="none">
+          <ion-icon size="large" name="play-circle-outline" color="tertiary"></ion-icon>
+          <ion-label>Reprodución aleatoria</ion-label>
+        </ion-item>
+        <ion-card>
+          <ion-card-content>
+            <h1>Local</h1>
+            <ion-list >
+              <ion-item *ngFor="let local of localArtists" button lines="none">
+                <ion-avatar>
+                  <!-- <img src="{{localArtists.images}}" /> -->
+                </ion-avatar>
+                <ion-label class="ion-margin-start">
+                  <!-- <h3>{{localArtists.name}}</h3> -->
+                  <p>{{local.name}}</p>
+                  <!-- <p>s</p> -->
                 </ion-label>
               </ion-item>
             </ion-list>
@@ -370,9 +391,28 @@
     </swiper-container>
   </ion-content>
 
-  <ion-footer class="ion-justify-content-between">
-    <ion-toolbar>
-      <ion-title>Mi música</ion-title>
-    </ion-toolbar>
+  <ion-footer>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-text-start">0:00</ion-col>
+        <ion-col class="ion-text-end">0:00</ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-progress-bar [value]="0.5"></ion-progress-bar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="1">
+        <ion-icon name="heart"></ion-icon>
+      </ion-col>
+      <ion-col size="10" class="ion-text-center">
+        <ion-text>{{
+          song.name || "Sin cancion seleccionada"
+        }}</ion-text>
+      </ion-col>
+      <ion-col size="1">
+        <ion-icon name="play"></ion-icon>
+      </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-footer>
 </div>

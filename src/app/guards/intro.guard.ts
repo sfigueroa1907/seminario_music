@@ -10,7 +10,7 @@ export class IntroGuard implements CanActivate {
   constructor(private storage: Storage, private router: Router) { }
   async canActivate() {
     const isIntroShowed = await this.storage.get('introShow');
-    console.log('🤞🤞', isIntroShowed);
+    // console.log('🤞🤞', isIntroShowed);
     if (isIntroShowed) {
       return true
     } else {
