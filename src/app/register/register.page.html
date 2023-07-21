@@ -7,27 +7,42 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
-    <ion-item>
-      <ion-input label="Email" labelPlacement="floating" placeholder="name@example.com"
-        formControlName="email"></ion-input>
-    </ion-item>
+<ion-content class="ion-padding" color="tertiary">
+  <div class="formContent">
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
+      <ion-item class="ion-margin-bottom">
+        <ion-icon color="tertiary" class="ion-margin-end" name="mail"></ion-icon>
+        <ion-input labelPlacement="floating" formControlName="email" type="email" placeholder="name@example.com">
+          <div slot="label">Email<ion-text color="danger">*</ion-text></div>
+        </ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-input label="Password" labelPlacement="floating" placeholder="*******"
-        formControlName="password"></ion-input>
-    </ion-item>
+      <ion-item class="ion-margin-bottom">
+        <ion-icon color="tertiary" class="ion-margin-end" name="key"></ion-icon>
+        <ion-input labelPlacement="floating" formControlName="password" type="password" placeholder="Su contraseña">
+          <div slot="label">Contraseña<ion-text color="danger">*</ion-text></div>
+        </ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-input label="Name" labelPlacement="floating" placeholder="Nombre" formControlName="name"></ion-input>
-    </ion-item>
+      <ion-item class="ion-margin-bottom">
+        <ion-icon color="tertiary" class="ion-margin-end" name="person"></ion-icon>
+        <ion-input labelPlacement="floating" formControlName="name" type="text" placeholder="Nombre">
+          <div slot="label">Nombres<ion-text color="danger">*</ion-text></div>
+        </ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-input label="Last Name" labelPlacement="floating" placeholder="Apellido"
-        formControlName="last_name"></ion-input>
-    </ion-item>
+      <ion-item class="ion-margin-bottom">
+        <ion-icon color="tertiary" class="ion-margin-end" name="person"></ion-icon>
+        <ion-input labelPlacement="floating" formControlName="last_name" type="text" placeholder="Apellido">
+          <div slot="label">Apellidos<ion-text color="danger">*</ion-text></div>
+        </ion-input>
 
-    <ion-button type="submit" [disabled]="!registerForm.valid">Registrar</ion-button>
-  </form>
+      </ion-item>
+      <div class="btnSumit">
+        <ion-button id="open-toast" expand="full" shape="round" type="submit"
+          [disabled]="!registerForm.valid">Registrar</ion-button>
+        <ion-toast trigger="open-toast" message="Usuario registrado con éxito" [duration]="1500"></ion-toast>
+      </div>
+    </form>
+  </div>
 </ion-content>
