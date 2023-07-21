@@ -16,6 +16,16 @@
           <div slot="label">Email<ion-text color="danger">*</ion-text></div>
         </ion-input>
       </ion-item>
+      <div>
+        <ng-container *ngFor="let validation of validationMessages.email">
+          <div class="messageError"
+            *ngIf="registerForm.get('email')?.hasError(validation.type) && registerForm.get('email')?.dirty">
+            <ion-label color="warning">
+              {{validation.message}}
+            </ion-label>
+          </div>
+        </ng-container>
+      </div>
 
       <ion-item class="ion-margin-bottom">
         <ion-icon color="tertiary" class="ion-margin-end" name="key"></ion-icon>
@@ -23,6 +33,16 @@
           <div slot="label">Contraseña<ion-text color="danger">*</ion-text></div>
         </ion-input>
       </ion-item>
+      <div class="ion-margin-bottom">
+        <ng-container *ngFor="let validation of validationMessages.pass">
+          <div class="messageError"
+            *ngIf="registerForm.get('password')?.hasError(validation.type) && registerForm.get('password')?.dirty">
+            <ion-label color="warning">
+              {{validation.message}}
+            </ion-label>
+          </div>
+        </ng-container>
+      </div>
 
       <ion-item class="ion-margin-bottom">
         <ion-icon color="tertiary" class="ion-margin-end" name="person"></ion-icon>
@@ -30,14 +50,34 @@
           <div slot="label">Nombres<ion-text color="danger">*</ion-text></div>
         </ion-input>
       </ion-item>
+      <div class="ion-margin-bottom">
+        <ng-container *ngFor="let validation of validationMessages.userName">
+          <div class="messageError"
+            *ngIf="registerForm.get('name')?.hasError(validation.type) && registerForm.get('name')?.dirty">
+            <ion-label color="warning">
+              {{validation.message}}
+            </ion-label>
+          </div>
+        </ng-container>
+      </div>
 
       <ion-item class="ion-margin-bottom">
         <ion-icon color="tertiary" class="ion-margin-end" name="person"></ion-icon>
         <ion-input labelPlacement="floating" formControlName="last_name" type="text" placeholder="Apellido">
           <div slot="label">Apellidos<ion-text color="danger">*</ion-text></div>
         </ion-input>
-
       </ion-item>
+      <div class="ion-margin-bottom">
+        <ng-container *ngFor="let validation of validationMessages.lastName">
+          <div class="messageError"
+            *ngIf="registerForm.get('last_name')?.hasError(validation.type) && registerForm.get('last_name')?.dirty">
+            <ion-label color="warning">
+              {{validation.message}}
+            </ion-label>
+          </div>
+        </ng-container>
+      </div>
+
       <div class="btnSumit">
         <ion-button id="open-toast" expand="full" shape="round" type="submit"
           [disabled]="!registerForm.valid">Registrar</ion-button>

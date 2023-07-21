@@ -20,6 +20,7 @@ export class HomePage {
   currentSong: any;
   newTime: any;
   albums: any;
+  
 
   constructor(
     private musicService: MusicService,
@@ -30,7 +31,7 @@ export class HomePage {
     //Obteniendo los artistas
     this.musicService.getArtists().then(listArtists => {
       this.artists = listArtists;
-      console.log("artistsServer", this.artists);
+      // console.log("artistsServer", this.artists);
     })
 
     //Obteniendo artistas locales
@@ -42,7 +43,7 @@ export class HomePage {
     //Obteniendo Albums
     this.musicService.getAlbums().then(listAlbums => {
       this.albums = listAlbums;
-      console.log("album: ", this.albums)
+      // console.log("album: ", this.albums)
     })
   }
 
@@ -65,9 +66,9 @@ export class HomePage {
   }
 
   async showAlbumSongs(album: any) {
-    //console.log(artist);
+    // console.log(this.artists);
     const songs = await this.musicService.getAlbumsTracks(album.id);
-    //console.log(songs);
+    // console.log(songs);
     const modal = await this.modalController.create(
       {
         component: SongsModalPage,
@@ -83,9 +84,11 @@ export class HomePage {
 
     return await modal.present();
   }
+  
 
   play() {
     this.currentSong = new Audio(this.song.preview_url);
+    console.log("🙌🙌", this.song);
     console.log(this.currentSong)
     this.currentSong.play();
     this.currentSong.addEventListener("timeupdate", () => {

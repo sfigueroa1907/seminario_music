@@ -10,6 +10,25 @@ import { NavController } from '@ionic/angular';
 })
 export class RegisterPage implements OnInit {
   registerForm: FormGroup;
+
+  validationMessages = {
+    email: [
+      { type: "required", message: "El email es obligatorio" },
+      { type: "pattern", message: "Debe de tener un email valido" },
+    ],
+    pass: [
+      { type: "required", message: "La Contraseña es obligatoria" },
+      { type: "pattern", message: "Debe de tener por lo menos Mayúsculas, minúsculas y caracteres especiales" },
+      { type: "min", message: "6" },
+    ],
+    userName: [
+      { type: "required", message: "El nombre es obligatorio" },
+    ],
+    lastName: [
+      { type: "required", message: "El apellido es obligatorio" },
+    ],
+  }
+
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthenticateService,
@@ -31,7 +50,8 @@ export class RegisterPage implements OnInit {
           Validators.compose(
             [
               Validators.required,
-              Validators.minLength(6)
+              Validators.minLength(6),
+              Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=])[A-Za-z\\d@#$%^&+=]{6,}$")
             ]
           )
         ),
@@ -40,7 +60,8 @@ export class RegisterPage implements OnInit {
           Validators.compose(
             [
               Validators.required,
-              Validators.minLength(6)
+              Validators.minLength(1),
+              Validators.maxLength(30)
             ]
           )
         ),
@@ -49,7 +70,8 @@ export class RegisterPage implements OnInit {
           Validators.compose(
             [
               Validators.required,
-              Validators.minLength(6)
+              Validators.minLength(1),
+              Validators.maxLength(30)
             ]
           )
         )
@@ -58,7 +80,7 @@ export class RegisterPage implements OnInit {
   }
 
   goToLogin() {
-    console.log("Ir atras");
+    // console.log("Ir atras");
     this.navCtrl.navigateBack("/login");
   }
   registerUser(userData: any) {

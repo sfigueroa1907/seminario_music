@@ -43,12 +43,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .labelTapSlide {
   font-size: 16px;
   color: gray;
 }
+
+.labelTapSlide:hover {
+  color: #5260ff;
+  // border-bottom: #5260ff;
+  // var(--border-radius)
+  // border-bottom: 1px solid red;
+
+}
+// .itemHover {
+//   border: 1px solid red;
+  
+//   // var(--border-radius)
+// }
+.itemHover:hover {
+  border-bottom: 2px solid #5260ff;
+  // var(--border-radius)
+}
+
 
 .slideC {
   display: flex;
@@ -57,6 +76,9 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  margin-bottom: 20px;
+  // color: red;
+  // --color-hover: ;
   // background-color: cyan;
 }
 

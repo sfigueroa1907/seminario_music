@@ -56,28 +56,28 @@
       <h1>Todas las canciones</h1>
       <div class="slideC">
         <div>
-          <ion-item button detail="false" lines="none">
+          <ion-item class="itemHover" button detail="false" lines="none">
             <ion-label class="labelTapSlide">
               Canciones
             </ion-label>
           </ion-item>
         </div>
         <div>
-          <ion-item button detail="false" lines="none">
+          <ion-item class="itemHover" button detail="false" lines="none">
             <ion-label class="labelTapSlide">
               Artistas
             </ion-label>
           </ion-item>
         </div>
         <div>
-          <ion-item button detail="false" lines="none">
+          <ion-item class="itemHover" button detail="false" lines="none">
             <ion-label class="labelTapSlide">
               Albumes
             </ion-label>
           </ion-item>
         </div>
         <div>
-          <ion-item button detail="false" lines="none">
+          <ion-item class="itemHover" button detail="false" lines="none">
             <ion-label class="labelTapSlide">
               Carpetas
             </ion-label>
@@ -90,14 +90,11 @@
       <!-- Canciones -->
       <swiper-slide>
         <ion-item button detail="false" lines="none">
-          <ion-icon size="large" name="play-circle-outline" color="tertiary"></ion-icon>
+          <ion-icon class="ion-margin-end" size="large" name="play-circle-outline" color="tertiary"></ion-icon>
           <ion-label>Reprodución aleatoria</ion-label>
         </ion-item>
         <ion-card>
-          <ion-card-header>
-            <!-- <ion-card-title>Todas las canciones</ion-card-title> -->
-            <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
-          </ion-card-header>
+          
           <ion-card-content>
             <ion-list>
               <ion-item button lines="none">
@@ -163,14 +160,11 @@
       <!-- Artistas -->
       <swiper-slide>
         <ion-item button detail="false" lines="none">
-          <ion-icon size="large" name="play-circle-outline" color="tertiary"></ion-icon>
+          <ion-icon class="ion-margin-end" size="large" name="play-circle-outline" color="tertiary"></ion-icon>
           <ion-label>Reprodución aleatoria</ion-label>
         </ion-item>
         <ion-card>
-          <ion-card-header>
-            <!-- <ion-card-title>Todas las canciones</ion-card-title> -->
-            <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
-          </ion-card-header>
+          
           <ion-card-content>
             <ion-list *ngFor="let artists of artists">
               <ion-item button detail="false" lines="none" (click)="showSongs(artists)">
@@ -219,14 +213,11 @@
       <!-- Albumes -->
       <swiper-slide>
         <ion-item button detail="false" lines="none">
-          <ion-icon size="large" name="play-circle-outline" color="tertiary"></ion-icon>
+          <ion-icon class="ion-margin-end" size="large" name="play-circle-outline" color="tertiary"></ion-icon>
           <ion-label>Reprodución aleatoria</ion-label>
         </ion-item>
         <ion-card>
-          <ion-card-header>
-            <!-- <ion-card-title>Todas las canciones</ion-card-title> -->
-            <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
-          </ion-card-header>
+          
           <ion-card-content *ngIf="albums?.length > 0">
             <ion-list *ngFor="let album of albums">
               <ion-item button lines="none" (click)="showAlbumSongs(album)">
@@ -249,14 +240,11 @@
       <!-- Carpetas -->
       <swiper-slide>
         <ion-item button detail="false" lines="none">
-          <ion-icon size="large" name="play-circle-outline" color="tertiary"></ion-icon>
+          <ion-icon class="ion-margin-end" size="large" name="play-circle-outline" color="tertiary"></ion-icon>
           <ion-label>Reprodución aleatoria</ion-label>
         </ion-item>
         <ion-card>
-          <ion-card-header>
-            <!-- <ion-card-title>Todas las canciones</ion-card-title> -->
-            <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
-          </ion-card-header>
+          
           <ion-card-content>
             <ion-list>
               <ion-item button lines="none">
@@ -320,7 +308,7 @@
       <!-- Local -->
       <swiper-slide>
         <ion-item button detail="false" lines="none">
-          <ion-icon size="large" name="play-circle-outline" color="tertiary"></ion-icon>
+          <ion-icon class="ion-margin-end" size="large" name="play-circle-outline" color="tertiary"></ion-icon>
           <ion-label>Reprodución aleatoria</ion-label>
         </ion-item>
         <ion-card>
@@ -342,7 +330,10 @@
         </ion-card>
       </swiper-slide>
     </swiper-container>
-    <h1>Artistas</h1>
+
+    <!-- Slides Horizontal demo -->
+
+    <!-- <h1>Artistas</h1>
     <swiper-container [initialSlide]="0" [slidesPerView]="4" *ngIf="artists?.length > 0">
       <swiper-slide *ngFor="let artists of artists">
         <ion-avatar>
@@ -360,7 +351,8 @@
           <span>{{album.name}}</span>
         </ion-avatar>
       </swiper-slide>
-    </swiper-container>
+    </swiper-container> -->
+
   </ion-content>
 
   <ion-footer>
@@ -378,15 +370,15 @@
     <ion-grid>
       <ion-row>
         <ion-col size="1">
-          <ion-icon name="heart"></ion-icon>
+          <ion-icon color="tertiary" name="heart"></ion-icon>
         </ion-col>
         <ion-col size="10" class="ion-text-center">
           <ion-text>{{
-            song?.name || "Sin cancion seleccionada"
+            song.name || "Sin cancion seleccionada"
             }}</ion-text>
         </ion-col>
         <ion-col size="1">
-          <ion-icon name="play" (click)="play()" *ngIf="!song?.playing"></ion-icon>
+          <ion-icon color="tertiary" name="play" (click)="play()" *ngIf="!song?.playing"></ion-icon>
           <ion-icon name="pause" (click)="pause()" *ngIf="song?.playing"></ion-icon>
         </ion-col>
       </ion-row>

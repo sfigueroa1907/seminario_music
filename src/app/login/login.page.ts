@@ -53,7 +53,7 @@ export class LoginPage implements OnInit {
         )
       }
     );
-    console.log("🙌🙌", this.loginForm.valid);
+    // console.log("🙌🙌", this.loginForm.valid);
   }
 
   ngOnInit() {
@@ -71,7 +71,6 @@ export class LoginPage implements OnInit {
   loginUser(credentials: any) {
     console.log(credentials);
     this.authService.loginUser(credentials).then(res => {
-      console.log("dd", this.errorMenssage);
       this.errorMenssage = "";
       this.storage.set("isUserLoggedIn", true);
       this.navCtrl.navigateForward("/menu/home");
