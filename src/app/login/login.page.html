@@ -38,7 +38,7 @@
       <ion-item >
         <!-- <ion-label>Password</ion-label> -->
         <ion-icon color="tertiary" class="ion-margin-end" name="key"></ion-icon>
-        <ion-input labelPlacement="floating" formControlName="password"  placeholder="Su contraseña">
+        <ion-input labelPlacement="floating" formControlName="password" type="password" placeholder="Su contraseña">
           <div slot="label">Contraseña<ion-text color="danger">*</ion-text></div>
         </ion-input>
       </ion-item>
@@ -54,7 +54,7 @@
       </div>
 
       <div class="btnSumit">
-        <ion-button expand="full" shape="round" [disabled]="!loginForm.valid" type="submit" (click)="presentToast('bottom')">Ingresar</ion-button>
+        <ion-button expand="full" shape="round" [disabled]="!loginForm.valid" type="submit">Ingresar</ion-button>
         <ion-button expand="full" shape="round" color="success" (click)="goToRegister()">
           Registrate
         </ion-button>

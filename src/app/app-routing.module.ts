@@ -5,17 +5,17 @@ import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     redirectTo: 'menu/home',
     pathMatch: 'full',
     // loadChildren: () => import('./home/home.module').then(m => m.HomePageModule), 
     //  canActivate: [LoginGuard, IntroGuard]
   },
-  {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '',
+  //   redirectTo: 'home',
+  //   pathMatch: 'full'
+  // },
   {
     path: 'intro',
     loadChildren: () => import('./intro/intro.module').then(m => m.IntroPageModule)
@@ -36,6 +36,7 @@ const routes: Routes = [
     path: 'songs-modal',
     loadChildren: () => import('./songs-modal/songs-modal.module').then( m => m.SongsModalPageModule)
   },
+  
 ];
 
 @NgModule({

@@ -69,7 +69,7 @@ export class LoginPage implements OnInit {
     await toast.present();
   }
   loginUser(credentials: any) {
-    console.log(credentials);
+    // console.log(credentials);
     this.authService.loginUser(credentials).then(res => {
       this.errorMenssage = "";
       this.storage.set("isUserLoggedIn", true);
