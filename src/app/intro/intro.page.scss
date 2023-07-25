@@ -49,5 +49,6 @@
 }
 
 .my-favorite-text-color {
-  color: #000000;
+  // color: #000000;
+  color: var(--my-favorite-color);
 }

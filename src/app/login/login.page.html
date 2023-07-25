@@ -10,6 +10,13 @@
 <ion-content class="ion-padding" color="tertiary">
   <div class="formContent">
     <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+      <ion-item lines="none" class="ion-text-center ion-font-weight">
+        
+          <!-- <img alt="Silhouette of mountains" width="80px" height="40px" src="assets/images/musicLog.png" /> -->
+          <ion-icon color="tertiary" size="large" slot="start" name="musical-note"></ion-icon>
+        
+        <ion-label> Escucha tu música preferida </ion-label>
+      </ion-item>
       <ion-item>
         <!-- <ion-label>Email</ion-label> -->
         <ion-icon color="tertiary" class="ion-margin-end" name="mail"></ion-icon>
@@ -54,7 +61,7 @@
       </div>
 
       <div class="btnSumit">
-        <ion-button expand="full" shape="round" [disabled]="!loginForm.valid" type="submit">Ingresar</ion-button>
+        <ion-button expand="full" shape="round" [disabled]="!loginForm.valid" type="submit" (click)="presentToast('bottom')">Ingresar</ion-button>
         <ion-button expand="full" shape="round" color="success" (click)="goToRegister()">
           Registrate
         </ion-button>

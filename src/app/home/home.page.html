@@ -316,12 +316,12 @@
             <h1>Local</h1>
             <ion-list>
               <ion-item *ngFor="let local of localArtists" button lines="none">
-                <ion-avatar>
-                  <!-- <img src="{{localArtists.images}}" /> -->
+                <ion-avatar *ngFor="let imageArts of imageArtist">
+                  <img src="{{imageArts.artists}}" />
                 </ion-avatar>
                 <ion-label class="ion-margin-start">
-                  <!-- <h3>{{localArtists.name}}</h3> -->
-                  <p>{{local.name}}</p>
+                  <h3>{{local.name}}</h3>
+                  <p>{{local.popularity}}</p>
                   <!-- <p>s</p> -->
                 </ion-label>
               </ion-item>

@@ -12,6 +12,7 @@ export class HomePage {
   
   artists: any;
   localArtists: any;
+  imageArtist: any;
   song = {
     name: '',
     playing: false,
@@ -38,6 +39,10 @@ export class HomePage {
     this.localArtists = this.musicService.getArtistsFromJson();
     this.localArtists = this.localArtists.artists
     // console.log("DataLocal: ", this.localArtists);
+    //Obteniendo imagenes locales del Json
+    this.imageArtist = this.musicService.getArtistsFromJson();
+    this.imageArtist = this.imageArtist.artists
+    // console.log("DataLocalImage: ", this.imageArtist);
     
 
     //Obteniendo Albums

@@ -23,9 +23,11 @@ export class RegisterPage implements OnInit {
     ],
     userName: [
       { type: "required", message: "El nombre es obligatorio" },
+      { type: "pattern", message: "Solo se admite texto" },
     ],
     lastName: [
       { type: "required", message: "El apellido es obligatorio" },
+      { type: "pattern", message: "Solo se admite texto" },
     ],
   }
 
@@ -60,6 +62,7 @@ export class RegisterPage implements OnInit {
           Validators.compose(
             [
               Validators.required,
+              Validators.pattern("[A-Za-z]"),
               Validators.minLength(1),
               Validators.maxLength(30)
             ]
@@ -70,6 +73,7 @@ export class RegisterPage implements OnInit {
           Validators.compose(
             [
               Validators.required,
+              Validators.pattern("[A-Za-z]"),
               Validators.minLength(1),
               Validators.maxLength(30)
             ]
