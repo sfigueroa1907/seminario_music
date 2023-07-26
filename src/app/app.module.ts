@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicModule, IonicRouteStrategy, PopoverController  } from '@ionic/angular';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -15,7 +16,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
   imports: [BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    IonicStorageModule.forRoot()],
+    IonicStorageModule.forRoot(),
+    HttpClientModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

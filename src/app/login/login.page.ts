@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthenticateService } from '../services/authenticate.service';
-import { NavController, PopoverController  } from '@ionic/angular';
+import { NavController, PopoverController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
-import { ToastController } from '@ionic/angular';
+// import { ToastController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -32,7 +33,8 @@ export class LoginPage implements OnInit {
     private navCtrl: NavController,
     private storage: Storage,
     private popoverController: PopoverController,
-    private toastController: ToastController
+    // private toastController: ToastController,
+    private alertCtrl: AlertController,
   ) {
     this.loginForm = this.formBuilder.group(
       {
@@ -57,34 +59,39 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
-    
-  }
-  async presentToast(position: 'top' | 'middle' | 'bottom') {
-    const toast = await this.toastController.create({
-      message: this.errorMenssage,
-      duration: 1500,
-      position: position,
-    });
 
-    await toast.present();
   }
+  
   loginUser(credentials: any) {
     // console.log(credentials);
-    this.authService.loginUser(credentials).then(res => {
+    this.authService.loginUser(credentials).then((res: any) => {
       this.errorMenssage = "";
       this.storage.set("isUserLoggedIn", true);
+      this.storage.set("user_id", res.id);
       this.navCtrl.navigateForward("/menu/home");
+      this.presentAlert("¡Bien!", "Inicio de sección", "Exitoso");
     }).catch(err => {
       this.errorMenssage = err;
       console.log(this.errorMenssage);
-      
+      this.presentAlert("Opps", "Error de Login", "Revisa tus credenciales");
     })
   }
-   
+
+  async presentAlert(header: string, subHeader: string, message: string) {
+    const alert = await this.alertCtrl.create({
+      header: header,
+      subHeader: subHeader,
+      message: message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
 
   goToRegister() {
     this.navCtrl.navigateForward("/register")
   }
 
-  
+
 }
